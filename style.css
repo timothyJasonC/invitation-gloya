@@ -48,12 +48,6 @@ body {
   background-size: cover;
 }
 
-@media (min-width: 600px) {
-  .reloader img {
-    display: none !important;
-  }
-}
-
 .overlay {
   position: absolute;
   z-index: 1;
@@ -130,7 +124,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 15rem;
+    padding-top: 10rem;
   }
   .head h1 br,
   .head p br {
@@ -147,9 +141,12 @@ body {
 
   .button {
     width: 60%;
-
     bottom: 4rem;
     margin-left: 0;
+  }
+
+  .button-extra {
+    bottom: -50%;
   }
 }
 
