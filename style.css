@@ -12,30 +12,19 @@ body {
   overflow: hidden;
 }
 
-.fixed-bg{
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-  background: url(center.jpg) no-repeat 47% center;
-  background-size: cover;
-  z-index: -1;
-}
-
-.fixed-bg::after{
+.fixed-bg::after {
   content: "";
   position: absolute;
-  top: 3px;
+  top: 0px;
   left: 0;
   width: 100%;
   height: 50%;
   background: linear-gradient(to bottom, #111, transparent);
 }
-.fixed-bg::before{
+.fixed-bg::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 100%;
   height: 50%;
@@ -55,15 +44,8 @@ body {
   width: 100%;
   display: flex;
   overflow: hidden;
-}
-
-.reloader img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  visibility: hidden;
-  display: none;
+  background: url(center.jpg) no-repeat 47% center;
+  background-size: cover;
 }
 
 @media (min-width: 600px) {
@@ -74,6 +56,7 @@ body {
 
 .overlay {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -120,6 +103,10 @@ body {
   align-items: center;
   text-align: center;
   font-weight: 400;
+}
+
+.button-extra {
+  bottom: -20%;
 }
 
 .button a {
@@ -176,14 +163,19 @@ body {
   display: flex;
   position: relative;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   align-items: center;
-  width: 80%;
+  width: 90%;
+  padding: 0 1rem;
   margin: 0 auto;
   color: white;
+  background: url(right.png) no-repeat center center;
+  background-size: cover;
 }
 
 .info-detail {
+  z-index: 10;
   position: absolute;
   top: 10%;
   display: flex;
@@ -208,278 +200,32 @@ body {
 }
 
 .social {
+  display: flex;
+  position: relative;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
   align-items: center;
-}
-
-.box {
-  position: relative;
-  width: 150px;
-  height: 50px;
-  background: #1c1c1c;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.box::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 150px;
-  height: 50px;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent,
-    #b54c43,
-    #b54c43,
-    #b54c43
-  );
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-}
-
-.box::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 150px;
-  height: 50px;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent,
-    #b54c43,
-    #b54c43,
-    #b54c43
-  );
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-  animation-delay: -3s;
-}
-
-.border-line {
-  position: absolute;
-  top: 0;
-  inset: 0;
-}
-
-.border-line::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 150px;
-  height: 50px;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent,
-    #b54c43,
-    #b54c43,
-    #b54c43
-  );
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-  animation-delay: -1.5s;
-}
-
-.border-line::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 150px;
-  height: 50px;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent,
-    #b54c43,
-    #b54c43,
-    #b54c43
-  );
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-  animation-delay: -4.5s;
-}
-
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.box a {
-  position: absolute;
-  inset: 3px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 90%;
+  padding: 0 1rem;
+  margin: 0 auto;
   color: white;
-  text-decoration: none;
-  background: #222;
-  border-radius: 10px;
-  z-index: 2;
+  background: url(center.png) no-repeat center center;
+  background-size: cover;
 }
 
-.box-link {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  background: #1c1c1c;
-  border-radius: 10px;
-  overflow: hidden;
+.social-button {
+  background-color: #b54c43;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
-.box-link::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent,
-    #b54c43,
-    #b54c43,
-    #b54c43
-  );
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-}
-
-.box-link::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent,
-    #b54c43,
-    #b54c43,
-    #b54c43
-  );
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-  animation-delay: -3s;
-}
-
-.border-line-link {
-  position: absolute;
-  top: 0;
-  inset: 0;
-}
-
-.border-line-link::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent,
-    #b54c43,
-    #b54c43,
-    #b54c43
-  );
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-  animation-delay: -1.5s;
-}
-
-.border-line-link::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent,
-    #b54c43,
-    #b54c43,
-    #b54c43
-  );
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-  animation-delay: -4.5s;
-}
-
-.box-link a {
-  position: absolute;
-  inset: 1px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.social-button svg {
   color: white;
-  text-decoration: none;
-  background: #222;
-  border-radius: 10px;
-  z-index: 2;
-}
-
-.box-link a svg {
-  color: #b54c43;
-}
-
-@media (min-width: 1200px) {
-  .box-link {
-    width: 120px;
-    height: 120px;
-  }
-
-  .box-link::before {
-    width: 120px;
-    height: 120px;
-  }
-
-  .box-link::after {
-    width: 120px;
-    height: 120px;
-  }
-
-  .border-line-link::before {
-    width: 120px;
-    height: 120px;
-  }
-
-  .border-line-link::after {
-    width: 120px;
-    height: 120px;
-  }
-  .box-link a svg {
-    inset: 4px;
-    width: 120px !important;
-    height: 120px !important;
-  }
 }
